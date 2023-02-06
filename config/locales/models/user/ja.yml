@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name:                     '名前'
+        name_kana:                '名前カナ'
+        sei:                      '姓'
+        mei:                      '名'
+        sei_kana:                 '姓カナ'
+        mei_kana:                 '名カナ'

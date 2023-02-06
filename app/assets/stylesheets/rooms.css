@@ -1,0 +1,53 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chatMessageSelect {
+  background:#f8fbff;
+  border-top:1px solid #b1d6ed;
+  border-bottom:1px solid #b1d6ed;
+  z-index:1;
+}
+
+.timelineMessage__body {
+    //padding: 8px 16px;
+    //border-top: 1px solid #fff;
+    //border-bottom: 1px solid #fff;
+}
+.timelineMessage__avatar {
+    float: left;
+}
+.timelineMessage__content {
+    zoom: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.timelineMessage__header {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 95%;
+}
+.timelineMessage__userName {
+    display: inline;
+    font-weight: 700;
+    ccursor: pointer;
+    color: #0084b2;
+}
+.timelineMessage__orgName {
+    display: inline;
+    margin-left: 4px;
+    color: #666;
+    font-size: 11px;
+}
+.timelineMessage__timeStamp {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    top: 9px;
+    color: #666;
+    font-size: 11px;
+}

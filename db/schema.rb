@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_04_075724) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_09_104040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -113,19 +113,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_075724) do
     t.string "mei_kana"
     t.string "mobile"
     t.string "lang_id", default: "EN", null: false
-    t.boolean "mycard_sign", default: false, null: false
-    t.boolean "company_flg", default: false, null: false
-    t.string "company_name"
-    t.string "company_type"
-    t.string "company_url"
-    t.string "department"
-    t.string "company_code"
+    t.string "company_name", default: "", null: false
+    t.string "business_type", default: "", null: false
+    t.string "company_url", default: "", null: false
+    t.string "department_name", default: "", null: false
+    t.string "kana_sei", default: "", null: false
+    t.string "kana_mei", default: "", null: false
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "vocab_mycards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id", null: false
-    t.integer "vocab_mycard_org"
+    t.integer "vocab_mycard_org", null: false
     t.integer "vocab_org", null: false
     t.string "vocab_code", null: false
     t.string "vocab_read"

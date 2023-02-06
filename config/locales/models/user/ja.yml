@@ -8,3 +8,16 @@ ja:
         mei:                      '名'
         sei_kana:                 '姓カナ'
         mei_kana:                 '名カナ'
+
+        # signup form new attributes
+        company_name:                     '貴社名'
+        business_type:                    '業種'
+        company_url:                      '貴社url'
+        department_name:                  '部署名'
+        name_label:                       'お名前'
+        name_furigana:                    '（フリガナ)'
+        mobile_number:                    'お電話番号'
+        e_mail:                           'Eメール'
+        user_id:                          'ID'
+        new_password:                     'パスワード'
+        confirm_password:                 'パスワード確認'

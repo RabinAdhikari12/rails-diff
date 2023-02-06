@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal text-center w-25 m-auto' }) do |f| %>
   <%= image_tag 'icon.png', class: 'mb-4' %>
   <h1 class="h3 mb-3 fw-normal"><%= t('.sign_in') %></h1>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,4 +19,4 @@
   <% end %>
   <%= f.submit t('.sign_in'), class: 'w-100 btn btn-lg btn-primary' %>
 <% end %>
-<p class="mt-5 mb-3"><%= render "devise/shared/links" %></p>
+<p class="mt-5 mb-3 text-center"><%= render "devise/shared/links" %></p>

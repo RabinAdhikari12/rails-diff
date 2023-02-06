@@ -1,36 +1,118 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
-  <%= image_tag 'icon.png', class: 'mb-4' %>
-  <h2 class="h3 mb-3 fw-normal"><%= t('.sign_up') %></h2>
-  <%= recaptcha_v3(action: 'signup') %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "devise/shared/error_messages", resource: resource %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="row text-center">
+        <h2 class="border border-info p-1.5 rounded">外国人材の採用をご検討している法人様</h2>
+      </div>
+      <div class="form-group row">
+        <div class="col">
+          <h4 class="text-left">企業情報</h4>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class="col-sm text-left">
+          <%= f.label :company_name %>
+        </div>
+        <div class="col-sm-10 p-1">
+          <%= f.text_field :company_name, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class="col-sm text-left">
+          <%= f.label :business_type %>
+        </div>
+        <div class="col-sm-10 p-1">
+          <%= f.text_field :business_type, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class="col-sm text-left">
+          <%= f.label :company_url %>
+        </div>
+        <div class="col-sm-10 p-1">
+          <%= f.text_field :company_url, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm">
+          <h4 class="text-left">ご担当者さま</h4>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class="col-sm text-left">
+          <%= f.label :department_name %>
+        </div>
+        <div class="col-sm-10 p-1">
+          <%= f.text_field :department_name, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm">
+          <%= f.label :name_label %>
+        </div>
+        <div class="col-sm-10 d-flex p-1 gap-3">
+          <%= f.text_field :sei, autofocus: true, class: 'form-control' %>
+          <%= f.text_field :mei, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm">
+          <%= f.label :name_furigana %>
+        </div>
+        <div class="col-sm-10 d-flex gap-3 p-1">
+          <%= f.text_field :kana_sei, autofocus: true, class: 'form-control' %>
+          <%= f.text_field :kana_mei, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm">
+          <%= f.label :mobile_number %>
+        </div>
+        <div class="col-sm-10 p-1">
+          <%= f.text_field :mobile, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class="col-sm">
+          <%= f.label :e_mail %>
+        </div>
+        <div class="col-sm-10 p-1">
+          <%= f.email_field :email,  autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row  ml-auto mr-auto w-50">
+        <div class="col-sm-9">
 
-  <div class="form-floating">
-    <%= f.text_field :sei, placeholder: 'Last Name', autofocus: true, class: 'form-control' %>
-    <%= f.label :sei %>
-  </div>
+        </div>
+        <div class="col-sm-3">
+                  <%= image_tag 'icon.png', height: '100px', class: 'mb-4' %>
+        </div>
+      </div>
+      <div class="form-floating p-1">
+        <%= f.text_field :created_by, autofocus: true, class: 'form-control' %>
+        <%= f.label :user_id %>
+      </div>
+      <div class="form-floating p-1">
+        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off", class: 'form-control rounded' %>
+        <%= f.label :password %>
+      </div>
 
-  <div class="form-floating">
-    <%= f.text_field :mei, placeholder: 'First Name', autofocus: false, class: 'form-control' %>
-    <%= f.label :mei %>
-  </div>
-  
-  <div class="form-floating">
-    <%= f.email_field :email, placeholder: 'email@example.com', autofocus: false, class: 'form-control' %>
-    <%= f.label :email %>
-  </div>
+      <div class="form-floating">
+        <%= f.password_field :password_confirmation, placeholder: 'パスワード確認', autocomplete: "off", class: 'form-control rounded' %>
+        <%= f.label :password_confirmation %>
+      </div>
 
-  <div class="form-floating">
-    <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off", class: 'form-control' %>
-    <%= f.label :password %>
-  </div>
+      <div class="actions text-center">
+        <%= f.submit t('.sign_up'), class: 'w-50 btn btn-lg btn-primary ' %>
+      </div>
 
-  <div class="form-floating">
-    <%= f.password_field :password_confirmation, placeholder: 'パスワード確認', autocomplete: "off", class: 'form-control' %>
-    <%= f.label :password_confirmation %>
+    </div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit t('.sign_up'), class: 'w-100 btn btn-lg btn-primary' %>
-  </div>
 <% end %>
-<p class="mt-5 mb-3"><%= render "devise/shared/links" %></p>
+<p class="mt-5 mb-3 text-center"><%= render "devise/shared/links" %></p>
